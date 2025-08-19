@@ -1,0 +1,9 @@
+- name: Install Nginx on EC@
+  hosts: webserver
+  become: true # this give sudo permession to ansible to install package or do any thing
+
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present # this will do update package if istalled earlier
